@@ -1,0 +1,90 @@
+{% extends "layout.html" %} {% block content %}
+<section class="hero is-medium hero-img">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title">
+       <span style="background-color: yellow; padding: 3px 5px;">FOODKART</span>
+      </h1>
+            <h2 class="subtitle">
+                <span style="background-color: yellow; padding: 3px 5px;">LUNCH AND DINNER AT THE OFFICE DON'T NEED TO BE A HUSSLE</span>
+        
+      </h2>
+        </div>
+    </div>
+</section>
+<div class="box cta">
+    <p class="has-text-centered">
+        <span class="tag is-primary">New</span> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </p>
+</div>
+<section class="section is-centered is-small">
+    <div class="container is-centered">
+        <div class="columns">
+            <div class="column is-8">
+<div class="box">
+                <div class="field">
+                    <label class="label">Company Name</label>
+                    <div class="control">
+                        <input class="input" type="text" placeholder="Company Name">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Phone</label>
+                    <div class="control has-icons-left has-icons-right">
+                        <input class="input" type="text" placeholder="07xx-xxx-xxx">
+                        <span class="icon is-small is-left">
+      <i class="la la-phone"></i>
+    </span>
+
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Email</label>
+                    <div class="control has-icons-left has-icons-right">
+                        <input class="input" type="email" placeholder="company@email.com">
+                        <span class="icon is-small is-left">
+      <i class="la la-envelope"></i>
+    </span>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Party of</label>
+                    <div class="control">
+                        <div class="select">
+                            <select>
+                                <option>5-10</option>
+                                <option>11-20</option>
+                                <option>21-30</option>
+                                <option>Above 30</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Message</label>
+                    <div class="control">
+                        <textarea class="textarea" placeholder="Textarea"></textarea>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="control">
+                        <label class="checkbox">
+                            <input type="checkbox"> I agree to the <a href="#">terms and conditions</a>
+                        </label>
+                    </div>
+                </div>
+                <div class="field is-grouped">
+                    <div class="control">
+                        <button class="button is-link">Submit</button>
+                    </div>
+                </div>
+
+              </div>
+            </div>
+            <div class="column is-4">
+              <img src="{{ url_for('static', filename = 'img/7793.svg') }}" alt="FOODKART">
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}
