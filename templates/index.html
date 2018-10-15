@@ -3,13 +3,15 @@
     <div class="hero-body">
         <div class="container">
             <h1 class="title">
-       <span style="background-color: yellow; padding: 3px 5px;">FOODKART</span>
-      </h1>
+                <span style="background-color: yellow; padding: 3px 5px;">FOODKART</span>
+            </h1>
             <h2 class="subtitle">
                 <span style="background-color: yellow; padding: 3px 5px;">LUNCH AND DINNER AT THE OFFICE DON'T NEED TO BE A HUSSLE</span>
-        
-      </h2>
-      <span style="background-color: yellow; padding: 3px 5px;">Hi {{user}}</span>
+
+            </h2>
+            <span style="background-color: yellow; padding: 3px 5px;">Hi {{user}}</span>
+            <br>
+            <span style="background-color: yellow; padding: 3px 5px;">Hi {{sic}}</span>
         </div>
     </div>
 </section>
@@ -72,7 +74,39 @@
             <h1>MENU</h1>
         </div>
         <div class="columns">
-            <div class="column">
+
+            {% for main in maindish %}
+            <div class="column is-3">
+                <div class="card">
+                    <div class="card-image">
+                        <figure class="image is-4by3">
+                            <img src="{{ main.dish_url }}" alt="Placeholder image">
+                        </figure>
+                    </div>
+                    <div class="card-content">
+                        <div class="content">
+                            {{ main.dishdescription }}
+                            <br>
+                        </div>
+                    </div>
+                    <footer class="card-footer">
+                        <p class="card-footer-item">
+                            <span>
+                                <a class="btn btn-primary" href="/add_to_cart/{{main.id}}">Add to Cart</a>
+      </span>
+                        </p>
+                        <p class="card-footer-item">
+                            <span>
+       {{ main.dishprice }} Kes
+      </span>
+                        </p>
+                    </footer>
+                </div>
+            </div>
+
+
+            {% endfor %}
+            <!-- <div class="column">
                 <div class="card">
                     <div class="card-image">
                         <figure class="image is-4by3">
@@ -100,97 +134,82 @@
                         </p>
                     </footer>
                 </div>
-            </div>
-            <div class="column">
-                <div class="card">
-                    <div class="card-image">
-                        <figure class="image is-4by3">
-                            <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-                        </figure>
-                    </div>
-                    <div class="card-content">
-                        <div class="content">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-                            <a href="#">#css</a> <a href="#">#responsive</a>
-                            <br>
-                            <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-                        </div>
-                    </div>
-                    <footer class="card-footer">
-                        <p class="card-footer-item">
-                            <span>
-        View cart
-      </span>
-                        </p>
-                        <p class="card-footer-item">
-                            <span>
-        300/=
-      </span>
-                        </p>
-                    </footer>
-                </div>
-            </div>
-            <div class="column">
-                <div class="card">
-                    <div class="card-image">
-                        <figure class="image is-4by3">
-                            <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-                        </figure>
-                    </div>
-                    <div class="card-content">
-                        <div class="content">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-                            <a href="#">#css</a> <a href="#">#responsive</a>
-                            <br>
-                            <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-                        </div>
-                    </div>
-                    <footer class="card-footer">
-                        <p class="card-footer-item">
-                            <span>
-        View cart
-      </span>
-                        </p>
-                        <p class="card-footer-item">
-                            <span>
-        300/=
-      </span>
-                        </p>
-                    </footer>
-                </div>
-            </div>
-            <div class="column">
-                <div class="card">
-                    <div class="card-image">
-                        <figure class="image is-4by3">
-                            <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-                        </figure>
-                    </div>
-                    <div class="card-content">
-                        <div class="content">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-                            <a href="#">#css</a> <a href="#">#responsive</a>
-                            <br>
-                            <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-                        </div>
-                    </div>
-                    <footer class="card-footer">
-                        <p class="card-footer-item">
-                            <span>
-        View cart
-      </span>
-                        </p>
-                        <p class="card-footer-item">
-                            <span>
-        300/=
-      </span>
-                        </p>
-                    </footer>
-                </div>
-            </div>
+            </div> -->
         </div>
     </div>
 </section>
+
+<section class="section has-text-centered is-small">
+    <div class="container is-centered">
+        <div class="notification">
+            <h1>JUICES</h1>
+        </div>
+        <div class="columns">
+
+            {% for juice in juicedish %}
+            <div class="column is-3">
+                <div class="card">
+                    <div class="card-image">
+                        <figure class="image is-4by3">
+                            <img src="{{ juice.dish_url }}" alt="Placeholder image">
+                        </figure>
+                    </div>
+                    <div class="card-content">
+                        <div class="content">
+                            {{ juice.dishdescription }}
+                            <br>
+                        </div>
+                    </div>
+                    <footer class="card-footer">
+                        <p class="card-footer-item">
+                            <span>
+                                <a class="btn btn-primary" href="/add_to_cart/{{juice.id}}">Add to Cart</a>
+          </span>
+                        </p>
+                        <p class="card-footer-item">
+                            <span>
+           {{ juice.dishprice }} Kes
+          </span>
+                        </p>
+                    </footer>
+                </div>
+            </div>
+
+
+            {% endfor %}
+            <!-- <div class="column">
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image is-4by3">
+                                <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <div class="content">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris. <a>@bulmaio</a>.
+                                <a href="#">#css</a> <a href="#">#responsive</a>
+                                <br>
+                                <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                            </div>
+                        </div>
+                        <footer class="card-footer">
+                            <p class="card-footer-item">
+                                <span>
+            View cart
+          </span>
+                            </p>
+                            <p class="card-footer-item">
+                                <span>
+            300/=
+          </span>
+                            </p>
+                        </footer>
+                    </div>
+                </div> -->
+        </div>
+    </div>
+</section>
+
 <section class="section is-small">
     <div class="container is-centered">
         <div class="notification">

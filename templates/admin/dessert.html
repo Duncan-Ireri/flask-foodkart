@@ -1,0 +1,71 @@
+{% extends "./_admin_base.html" %} {% block content %} {% include '_admin_nav.html' %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+
+        </div>
+        <div class="col-md-9">
+
+
+            <form class="form-horizontal" method="POST" enctype="multipart/form-data" action="{{ url_for('dessert') }}">
+                <fieldset>
+                    <legend>DESSERT AND JUICES</legend>
+                    {{ form.hidden_tag() }}
+
+                    <div class="form-group">
+                        {{ form.desert.label }} {{ form.desert(class_="form-control") }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.dessertprice.label }} {{ form.dessertprice(class_="form-control") }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.desertimage.label }} {{ form.desertimage }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.dessertdescription.label }} {{ form.dessertdescription(class_="form-control", size=20) }}
+                    </div>
+                    <br> {{ form.submit }}
+                </fieldset>
+            </form>
+
+
+
+
+        </div>
+    </div>
+</div>
+
+
+<script>
+    function showMe(box) {
+
+        var chboxs = document.getElementsByName("dishoffer");
+        var vis = "none";
+        for (var i = 0; i < chboxs.length; i++) {
+            if (chboxs[i].checked) {
+                vis = "block";
+                break;
+            }
+        }
+        document.getElementById(box).style.display = vis;
+    }
+</script>
+
+<script>
+    function showMe(box) {
+
+        var chboxs = document.getElementsByName("c2");
+        var vis = "none";
+        for (var i = 0; i < chboxs.length; i++) {
+            if (chboxs[i].checked) {
+                vis = "block";
+                break;
+            }
+        }
+        document.getElementById(box).style.display = vis;
+    }
+</script>
+
+
+{% endblock content %}
